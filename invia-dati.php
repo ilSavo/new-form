@@ -56,19 +56,19 @@
 					<td>'.$piva.'</td>
 				</tr>
 				<tr>
-					<th align="right">piva:&nbsp;</th>
+					<th align="right">tel:&nbsp;</th>
 					<td>'.$tel.'</td>
 				</tr>
 				<tr>
-					<th align="right">piva:&nbsp;</th>
+					<th align="right">email:&nbsp;</th>
 					<td>'.$email.'</td>
 				</tr>
 				<tr>
-					<th align="right">piva:&nbsp;</th>
+					<th align="right">privacy1:&nbsp;</th>
 					<td>'.$privacy1.'</td>
 				</tr>
 				<tr>
-					<th align="right">piva:&nbsp;</th>
+					<th align="right">privacy2:&nbsp;</th>
 					<td>'.$privacy2.'</td>
 				</tr>
 			</table>
@@ -77,6 +77,7 @@
 	// // To send HTML mail, the Content-type header must be set
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
 
 	if ($test) {
 		$headers .= 'To: marcosavoia <marco.savoia@gmail.com>' . "\r\n";
