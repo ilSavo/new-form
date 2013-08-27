@@ -13,11 +13,11 @@
 		$privacy2 	 = $_POST['privacy2'];
 	}
 
-	$test = true;
+	$test = false;
 	if ($test) {
 		$to = 'marco.savoia@gmail.com';
 	} else {
-		$to = '';
+		$to = 'partner@noleggioauto.it';
 	}
 
 	// subject
@@ -83,15 +83,11 @@
 		$headers .= 'To: marcosavoia <marco.savoia@gmail.com>' . "\r\n";
 		$headers .= 'From: marcosavoia <marco.savoia@gmail.com>' . "\r\n";
 	} else {
-		$headers .= 'To: noleggioauto.it <noleggioauto.it@gmail.com>' . "\r\n";
+		$headers .= 'To: noleggioauto.it <'.$to.'>' . "\r\n";
 		$headers .= 'From: Noleggioauto.it <no-reply@noleggioauto.it>' . "\r\n";
 	}
 
-	if(!filter_var($to, FILTER_VALIDATE_EMAIL)){
-		$result = false;
-    } else {
-    	$result = @mail( $to, $subject, $message, $headers );	
-    }
+    $result = @mail( $to, $subject, $message, $headers );	
 
 	// Mail it
 	if ($result) {
