@@ -1,4 +1,19 @@
 $(document).ready(function(){
+  $('#myModal').on('show', function (e) {
+    $("#myModal").find("input").val("");
+    $("#myModal").find(".contentform").show();
+    $("#myModal").find(".contentsuccess").hide();
+    $("#myModal").find(".btninvia").show();
+    $("#myModal").find(".btnclose").hide();
+    $("#myModal").find("input:checkbox").attr("checked", false);
+  }).on('hidden', function (e) {
+    $("#myModal").find("input").val("");
+    $("#myModal").find(".contentform").show();
+    $("#myModal").find(".contentsuccess").hide();
+    $("#myModal").find(".btninvia").show();
+    $("#myModal").find(".btnclose").hide();
+    $("#myModal").find("input:checkbox").attr("checked", false);
+  });
   $("#invia-form").on('click', function(e){
     e.preventDefault();
     var nome = $("#nome").val();
@@ -40,7 +55,11 @@ $(document).ready(function(){
         privacy2: privacy2
       },
       success: function(data){
-        alert("Fatto!");
+        var modal = $("#myModal");
+        modal.find(".contentform").hide();
+        modal.find(".contentsuccess").show();
+        modal.find(".btninvia").hide();
+        modal.find(".btnclose").show();
       }
     });
   });
