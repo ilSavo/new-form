@@ -35,7 +35,7 @@ $(document).ready(function(){
     email = $.trim(email);
     if (!re.test(email)) { 
       alert("Scrivi un indirizzo email valido");
-      result = false; 
+      return false;
     };
     if (!privacy1 || !privacy2 ) {
       alert("Non hai accettato le condizioni");
