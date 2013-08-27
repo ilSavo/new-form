@@ -31,6 +31,12 @@ $(document).ready(function(){
       alert("Compila tutti i campi");
       return false; 
     }
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    email = $.trim(email);
+    if (!re.test(email)) { 
+      alert("Scrivi un indirizzo email valido");
+      result = false; 
+    };
     if (!privacy1 || !privacy2 ) {
       alert("Non hai accettato le condizioni");
       return false;  

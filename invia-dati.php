@@ -87,9 +87,13 @@
 		$headers .= 'From: Noleggioauto.it <no-reply@noleggioauto.it>' . "\r\n";
 	}
 
-	// Mail it
-	$result = @mail( $to, $subject, $message, $headers );
+	if(!filter_var($to, FILTER_VALIDATE_EMAIL)){
+		$result = false;
+    } else {
+    	$result = @mail( $to, $subject, $message, $headers );	
+    }
 
+	// Mail it
 	if ($result) {
 		echo json_encode(array("success" => true));
 	} else {
